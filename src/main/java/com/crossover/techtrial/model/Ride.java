@@ -3,7 +3,11 @@
  */
 package com.crossover.techtrial.model;
 
+import org.apache.tomcat.jni.Local;
+
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,6 +35,12 @@ public class Ride implements Serializable{
   @NotNull
   @Column(name = "end_time")
   String endTime;
+
+  @Column(name = "ride_start_time")
+  LocalDateTime rideStartTime;
+
+  @Column(name = "ride_end_time")
+  LocalDateTime rideEndTime;
   
   @Column(name = "distance")
   Long distance;
@@ -57,6 +67,9 @@ public class Ride implements Serializable{
 
   public void setStartTime(String startTime) {
     this.startTime = startTime;
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss.zzz");
+    LocalDateTime start_time = LocalDateTime.parse(startTime, formatter);
+    setRideStartTime(start_time);
   }
 
   public String getEndTime() {
@@ -65,6 +78,9 @@ public class Ride implements Serializable{
 
   public void setEndTime(String endTime) {
     this.endTime = endTime;
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss.zzz");
+    LocalDateTime end_time = LocalDateTime.parse(endTime, formatter);
+    setRideEndTime(end_time);
   }
 
   public Long getDistance() {
@@ -90,6 +106,14 @@ public class Ride implements Serializable{
   public void setRider(Person rider) {
     this.rider = rider;
   }
+
+  public LocalDateTime getRideStartTime(){ return rideStartTime; }
+
+  public void setRideStartTime(LocalDateTime rideStartTime){ this.rideStartTime = rideStartTime; }
+
+  public LocalDateTime getRideEndTime(){ return rideEndTime; }
+
+  public void setRideEndTime(LocalDateTime rideEndTime){ this.rideEndTime = rideEndTime; }
   
   
 

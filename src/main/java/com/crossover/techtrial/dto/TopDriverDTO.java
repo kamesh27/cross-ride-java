@@ -17,30 +17,14 @@ public class TopDriverDTO {
    * @param maxRideDurationInSecods
    * @param averageDistance
    */
-  public TopDriverDTO(String name, 
-      String email, 
-      Long totalRideDurationInSeconds,
-      Long maxRideDurationInSecods,
-      Double averageDistance) {
-    this.setName(name);
-    this.setEmail(email);
-    this.setAverageDistance(averageDistance);
-    this.setMaxRideDurationInSecods(maxRideDurationInSecods);
-    this.setTotalRideDurationInSeconds(totalRideDurationInSeconds);
-    
-  }
-  
-  public TopDriverDTO() {
-    
-  }
-  
+
   private String name;
   
   private String email;
   
   private Long totalRideDurationInSeconds;
   
-  private Long maxRideDurationInSecods;
+  private Long maxRideDurationInSeconds;
   
   private Double averageDistance;
 
@@ -68,12 +52,12 @@ public class TopDriverDTO {
     this.totalRideDurationInSeconds = totalRideDurationInSeconds;
   }
 
-  public Long getMaxRideDurationInSecods() {
-    return maxRideDurationInSecods;
+  public Long getMaxRideDurationInSeconds() {
+    return maxRideDurationInSeconds;
   }
 
-  public void setMaxRideDurationInSecods(Long maxRideDurationInSecods) {
-    this.maxRideDurationInSecods = maxRideDurationInSecods;
+  public void setMaxRideDurationInSeconds(Long maxRideDurationInSeconds) {
+    this.maxRideDurationInSeconds = maxRideDurationInSeconds;
   }
 
   public Double getAverageDistance() {

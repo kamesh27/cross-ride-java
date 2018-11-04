@@ -7,3 +7,7 @@ build/*
 target/*
 **/.DS_Store
 **/.settings
+/.metadata/
+.idea/
+cross-ride-java.iml
+out/
