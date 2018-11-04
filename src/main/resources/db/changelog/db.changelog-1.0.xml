@@ -17,6 +17,8 @@
             <column name="rider_id" type="BIGINT"/>
             <column name="start_time" type="VARCHAR(255)"/>
             <column name="end_time" type="VARCHAR(255)"/>
+            <column name="ride_start_time" type="DATE"/>
+            <column name="ride_end_time" type="DATE"/>
             <column name="distance" type="BIGINT"/>
         </createTable>
          <addForeignKeyConstraint baseColumnNames="driver_id"
